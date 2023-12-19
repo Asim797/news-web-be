@@ -1,0 +1,476 @@
+{
+	"info": {
+		"_postman_id": "d096834d-0919-45c0-8b85-ef50a7d15ed8",
+		"name": "News App Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"asim@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://1d60-36-255-45-159.ngrok-free.app/laravel-test/public/api/auth/login",
+							"protocol": "https",
+							"host": [
+								"1d60-36-255-45-159",
+								"ngrok-free",
+								"app"
+							],
+							"path": [
+								"laravel-test",
+								"public",
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"shahab\",\r\n    \"last_name\": \"khan\",\r\n    \"email\": \"shahab@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}"
+						},
+						"url": {
+							"raw": "https://1d60-36-255-45-159.ngrok-free.app/laravel-test/public/api/auth/register",
+							"protocol": "https",
+							"host": [
+								"1d60-36-255-45-159",
+								"ngrok-free",
+								"app"
+							],
+							"path": [
+								"laravel-test",
+								"public",
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Profile",
+			"item": [
+				{
+					"name": "Get User Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "8|vB5rG8HRdiE8ppSzWOW1zJZRLltgPoi5mnAEWSHSbecbdff0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://1d60-36-255-45-159.ngrok-free.app/laravel-test/public/api/profile",
+							"protocol": "https",
+							"host": [
+								"1d60-36-255-45-159",
+								"ngrok-free",
+								"app"
+							],
+							"path": [
+								"laravel-test",
+								"public",
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "8|vB5rG8HRdiE8ppSzWOW1zJZRLltgPoi5mnAEWSHSbecbdff0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Asimm\",\r\n    \"last_name\": \"Razaa\"\r\n}"
+						},
+						"url": {
+							"raw": "https://1d60-36-255-45-159.ngrok-free.app/laravel-test/public/api/update-profile",
+							"protocol": "https",
+							"host": [
+								"1d60-36-255-45-159",
+								"ngrok-free",
+								"app"
+							],
+							"path": [
+								"laravel-test",
+								"public",
+								"api",
+								"update-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Preferences",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|8mnj62Fa27yILPQjcULJt60Bu7AwpwJQFVDMNbmk565dde1b",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sources\": [1, 2, 3, 4, 5],\r\n    \"categories\": [1, 2, 3, 4, 5],\r\n    \"authors\": [1, 2, 3, 4, 5]\r\n}"
+						},
+						"url": {
+							"raw": "https://7751-2400-adc1-126-aa00-fd7b-8d64-57ac-8db0.ngrok-free.app/laravel-test/public/api/update-preferences",
+							"protocol": "https",
+							"host": [
+								"7751-2400-adc1-126-aa00-fd7b-8d64-57ac-8db0",
+								"ngrok-free",
+								"app"
+							],
+							"path": [
+								"laravel-test",
+								"public",
+								"api",
+								"update-preferences"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "8|vB5rG8HRdiE8ppSzWOW1zJZRLltgPoi5mnAEWSHSbecbdff0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"current_password\": \"123456789\",\r\n    \"password\": \"12345678\",\r\n    \"confirm_password\": \"12345678\"\r\n}"
+						},
+						"url": {
+							"raw": "https://1d60-36-255-45-159.ngrok-free.app/laravel-test/public/api/change-password",
+							"protocol": "https",
+							"host": [
+								"1d60-36-255-45-159",
+								"ngrok-free",
+								"app"
+							],
+							"path": [
+								"laravel-test",
+								"public",
+								"api",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Articles",
+			"item": [
+				{
+					"name": "Get All Categories Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "86|GLBvxCmI1T8XsND61msdT16taQnh0XpU626Buqjof99f5820",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://b803-36-255-45-159.ngrok-free.app/laravel-test/public/api/articles/categories",
+							"protocol": "https",
+							"host": [
+								"b803-36-255-45-159",
+								"ngrok-free",
+								"app"
+							],
+							"path": [
+								"laravel-test",
+								"public",
+								"api",
+								"articles",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Sources Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "86|GLBvxCmI1T8XsND61msdT16taQnh0XpU626Buqjof99f5820",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://b803-36-255-45-159.ngrok-free.app/laravel-test/public/api/articles/sources",
+							"protocol": "https",
+							"host": [
+								"b803-36-255-45-159",
+								"ngrok-free",
+								"app"
+							],
+							"path": [
+								"laravel-test",
+								"public",
+								"api",
+								"articles",
+								"sources"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Authors Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "86|GLBvxCmI1T8XsND61msdT16taQnh0XpU626Buqjof99f5820",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://b803-36-255-45-159.ngrok-free.app/laravel-test/public/api/articles/authors",
+							"protocol": "https",
+							"host": [
+								"b803-36-255-45-159",
+								"ngrok-free",
+								"app"
+							],
+							"path": [
+								"laravel-test",
+								"public",
+								"api",
+								"articles",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Articles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|8mnj62Fa27yILPQjcULJt60Bu7AwpwJQFVDMNbmk565dde1b",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://7751-2400-adc1-126-aa00-fd7b-8d64-57ac-8db0.ngrok-free.app/laravel-test/public/api/articles",
+							"protocol": "https",
+							"host": [
+								"7751-2400-adc1-126-aa00-fd7b-8d64-57ac-8db0",
+								"ngrok-free",
+								"app"
+							],
+							"path": [
+								"laravel-test",
+								"public",
+								"api",
+								"articles"
+							],
+							"query": [
+								{
+									"key": "sources",
+									"value": "1,4",
+									"disabled": true
+								},
+								{
+									"key": "categories",
+									"value": "2,3",
+									"disabled": true
+								},
+								{
+									"key": "authors",
+									"value": "5,6",
+									"disabled": true
+								},
+								{
+									"key": "date",
+									"value": "2023-12-17",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "Electric Vehicles",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
